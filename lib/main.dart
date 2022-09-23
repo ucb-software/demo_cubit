@@ -1,3 +1,4 @@
+import 'package:demo_cubit/ui/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -39,8 +40,8 @@ class MyHomePage extends StatelessWidget {
         ),
         body: BlocBuilder<AppCubit, AppState>(
           builder: (BuildContext context, state) {
-            if (state.isLoading) {
-              return const Center(child: CircularProgressIndicator());
+            if (!state.isUserLoggedIn) {
+              return LoginPage();
             } else if (state.isUserLoggedIn) {
               return Center(
                 child: Column(
@@ -56,20 +57,7 @@ class MyHomePage extends StatelessWidget {
                 ),
               );
             } else {
-              return Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text("Login"),
-                    ElevatedButton(
-                        onPressed: () {
-                          BlocProvider.of<AppCubit>(context)
-                              .login("jperez", "123456");
-                        },
-                        child: const Text("Login"))
-                  ],
-                ),
-              );
+              return const Center(child: Text("Error"));
             }
           },
         ) // This trailing comma makes auto-formatting nicer for build methods.
