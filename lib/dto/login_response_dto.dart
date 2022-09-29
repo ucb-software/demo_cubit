@@ -5,16 +5,18 @@
 // NO TIENEN LOGICA DE NEGOCIO
 
 class LoginResponseDto {
-  final String token;
-  final String refreshToken;
-  final String firstName;
-  final String lastName;
+  final bool success;
+  final String? token;
+  final String? refreshToken;
+  final String? firstName;
+  final String? lastName;
 
   LoginResponseDto(
-      {required this.token,
-      required this.refreshToken,
-      required this.firstName,
-      required this.lastName});
+      {this.success = false,
+      this.token,
+      this.refreshToken,
+      this.firstName,
+      this.lastName});
 
   // El endpoint retornará un JSON con la siguiente estructura:
   // { "token": "ey123hg123h123.12h323.adasd", "refreshToken": "ey123hg123h123.12h323.adasd",
