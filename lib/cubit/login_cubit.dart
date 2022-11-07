@@ -11,6 +11,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(state.copyWith(status: PageStatus.loading));
     try {
       LoginResponseDto response = await LoginService.login(username, password);
+      // Guardar el token y refresh
       emit(state.copyWith(
           loginSuccess: true,
           status: PageStatus.success,
