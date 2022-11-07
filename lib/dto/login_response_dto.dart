@@ -5,29 +5,12 @@
 // NO TIENEN LOGICA DE NEGOCIO
 
 class LoginResponseDto {
-  final bool success;
   final String? token;
-  final String? refreshToken;
-  final String? firstName;
-  final String? lastName;
+  final String? refresh;
 
-  LoginResponseDto(
-      {this.success = false,
-      this.token,
-      this.refreshToken,
-      this.firstName,
-      this.lastName});
-
-  // El endpoint retornará un JSON con la siguiente estructura:
-  // { "token": "ey123hg123h123.12h323.adasd", "refreshToken": "ey123hg123h123.12h323.adasd",
-  // "firstName": "Juan", "lastName": "Perez" }
+  LoginResponseDto({this.token, this.refresh});
 
   factory LoginResponseDto.fromJson(Map<String, dynamic> json) {
-    return LoginResponseDto(
-      token: json['token'],
-      refreshToken: json['refreshToken'],
-      firstName: json['firstName'],
-      lastName: json['lastName'],
-    );
+    return LoginResponseDto(token: json['token'], refresh: json['refresh']);
   }
 }
