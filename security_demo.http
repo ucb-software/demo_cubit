@@ -15,7 +15,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "username": "lramirez99",
+  "username": "lramirez",
   "password": "ABCabc123"
 }
 
@@ -27,3 +27,7 @@ Accept: application/json
 {
 }
 ################# Consultar usuario
+
+GET http://localhost:7777/api/v1/user/
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJscmFtaXJleiIsInJvbGVzIjpbIkNSRUFSX1VTVUFSSU8iXSwiaXNzIjoidWNiIiwicmVmcmVzaCI6ZmFsc2UsImV4cCI6MTY2Nzk2MTAyN30.RfG54w8p2y5yFTi3K5Ysx6p0Kyai8afEX7VfLWECe4E

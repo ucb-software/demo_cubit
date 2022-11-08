@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-enum PageStatus { initial, loading, success, failure }
+import 'page_status.dart';
 
 class LoginState extends Equatable {
   final PageStatus status;
